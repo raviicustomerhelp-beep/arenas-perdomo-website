@@ -3,14 +3,11 @@
 Statische Website. Kein Build nötig.
 
 - index.html – Hauptseite
-- support.js, image-slot.js – benötigte Skripte (müssen im selben Ordner liegen)
+- support.js – benötigtes Skript (muss im selben Ordner liegen)
+- img/ – Bilder (hero, techsheet, oliver, offroad, huber)
 - impressum.html, datenschutz.html – Unterseiten (/impressum, /datenschutz)
 - logo.png – Logo und Favicon
 - vercel.json – saubere URLs
 
-## Veröffentlichen
-Repo bei vercel.com importieren (Add New → Project). Kein Build-Command, Output Directory leer lassen.
-Jeder neue Commit wird automatisch veröffentlicht.
-
-## Eigene Domain
-Vercel → Projekt → Settings → Domains.
+## Aktualisieren
+Geänderte Dateien ins GitHub-Repo hochladen. Vercel veröffentlicht automatisch.

@@ -16,7 +16,6 @@
 <helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap" rel="stylesheet">
-  <script src="image-slot.js"></script>
   <style>
     html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -84,7 +83,7 @@
       </div>
     </div>
     <div style="border-radius:24px;overflow:hidden">
-      <image-slot id="hero-photo" shape="rect" style="width:100%;aspect-ratio:21/9" placeholder="Editorial fashion production photo — fabric, tailoring, fitting"></image-slot>
+      <img src="img/hero.jpg" alt="Kollektion von Arenas Perdomo: Hoodie, T-Shirt, Rashguard, Muay Thai Shorts, Fight Shorts und Tasche" loading="lazy" style="width:100%;aspect-ratio:21/9;object-fit:cover;display:block">
     </div>
     <div style="height:clamp(48px,7vw,80px)"></div>
   </header>
@@ -332,7 +331,7 @@
         <sc-for list="{{ t.testi.items }}" as="tm" hint-placeholder-count="2">
           <figure style="margin:0;border-top:1px solid #CFC9BA;padding:clamp(32px,4.5vw,56px) 0;display:grid;grid-template-columns:clamp(88px,10vw,140px) 1fr;gap:24px clamp(28px,4vw,64px);align-items:start">
             <div style="border-radius:24px;overflow:hidden">
-              <image-slot id="{{ tm.img }}" shape="circle" style="width:100%;aspect-ratio:1/1" placeholder="Kundenfoto"></image-slot>
+              <img src="{{ tm.img }}" alt="{{ tm.who }}" loading="lazy" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:999px;display:block">
             </div>
             <div style="display:grid;gap:24px">
               <blockquote style="margin:0;font-family:'Source Serif 4',serif;font-weight:600;font-size:clamp(20px,2.4vw,30px);line-height:1.35;letter-spacing:-0.01em;max-width:36ch">“{{ tm.q }}”</blockquote>
@@ -387,7 +386,7 @@
         </div>
       </div>
       <div style="border-radius:24px;overflow:hidden">
-        <image-slot id="qc-photo" shape="rect" style="width:100%;aspect-ratio:4/5" placeholder="Close-up: seams, fabric, measuring, inspection"></image-slot>
+        <img src="img/techsheet.jpg" alt="Tech-Pack: Muay Thai Shorts mit Massen, Material, Gewicht und Detailaufnahmen" loading="lazy" style="width:100%;display:block;background:#FAF9F5">
       </div>
     </div>
   </section>
@@ -504,7 +503,7 @@
     <div style="height:1px;background:#E7E2D6"></div>
     <div data-reveal="true" style="padding:clamp(48px,7vw,84px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px clamp(32px,5vw,88px);align-items:center">
       <div style="border-radius:24px;overflow:hidden;max-width:440px">
-        <image-slot id="founder-photo" shape="rect" style="width:100%;aspect-ratio:4/5" placeholder="Porträtfoto Oliver"></image-slot>
+        <img src="img/oliver.jpg" alt="Oliver Arenas Perdomo" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block">
       </div>
       <div>
         <span style="display:block;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#015EDD;margin:0 0 18px">{{ t.founder.kicker }}</span>
@@ -619,8 +618,8 @@ class Component extends DCLogic {
       testi: {
         kicker: 'Referenzen', h: 'Was unsere Kunden sagen.',
         items: [
-          { img: 'testi-sparta', q: 'Wir haben lange nach einem zuverlässigen Supplier für hochwertige Gym-Bekleidung gesucht. Mit Oliver haben wir ihn gefunden. Die Bestellung läuft reibungslos, der Preis stimmt und die Ware kommt so an, wie wir sie uns vorgestellt haben.', who: 'Offroad GmbH' },
-          { img: 'testi-huber', q: 'Wir brauchten ein kompliziertes Design für eine Werbekampagne von Coop. Oliver hat uns von Anfang an mit vollem Vertrauen begleitet und die Designs umgesetzt. Die Kampagne war ein Erfolg. Alles ist top gelaufen.', who: 'Yanis Huber' }
+          { img: 'img/offroad.jpg', q: 'Wir haben lange nach einem zuverlässigen Supplier für hochwertige Gym-Bekleidung gesucht. Mit Oliver haben wir ihn gefunden. Die Bestellung läuft reibungslos, der Preis stimmt und die Ware kommt so an, wie wir sie uns vorgestellt haben.', who: 'Offroad GmbH' },
+          { img: 'img/huber.jpg', q: 'Wir brauchten ein kompliziertes Design für eine Werbekampagne von Coop. Oliver hat uns von Anfang an mit vollem Vertrauen begleitet und die Designs umgesetzt. Die Kampagne war ein Erfolg. Alles ist top gelaufen.', who: 'Yanis Huber' }
         ]
       },
       hero: {
@@ -787,8 +786,8 @@ class Component extends DCLogic {
       testi: {
         kicker: 'Références', h: 'Ce que disent nos clients.',
         items: [
-          { img: 'testi-sparta', q: 'Nous avons longtemps cherché un fournisseur fiable pour des vêtements de gym de qualité. Avec Oliver, nous l’avons trouvé. Les commandes se déroulent sans accroc, le prix est juste et la marchandise arrive exactement comme nous l’imaginions.', who: 'Offroad GmbH' },
-          { img: 'testi-huber', q: 'Nous avions besoin d’un design complexe pour une campagne publicitaire de Coop. Oliver nous a accompagnés dès le début en toute confiance et a réalisé les designs. La campagne a été un succès. Tout s’est parfaitement déroulé.', who: 'Yanis Huber' }
+          { img: 'img/offroad.jpg', q: 'Nous avons longtemps cherché un fournisseur fiable pour des vêtements de gym de qualité. Avec Oliver, nous l’avons trouvé. Les commandes se déroulent sans accroc, le prix est juste et la marchandise arrive exactement comme nous l’imaginions.', who: 'Offroad GmbH' },
+          { img: 'img/huber.jpg', q: 'Nous avions besoin d’un design complexe pour une campagne publicitaire de Coop. Oliver nous a accompagnés dès le début en toute confiance et a réalisé les designs. La campagne a été un succès. Tout s’est parfaitement déroulé.', who: 'Yanis Huber' }
         ]
       },
       hero: {
@@ -955,8 +954,8 @@ class Component extends DCLogic {
       testi: {
         kicker: 'References', h: 'What our clients say.',
         items: [
-          { img: 'testi-sparta', q: 'We searched a long time for a reliable supplier of high-quality gym apparel. With Oliver we found one. Orders run smoothly, the price is right, and the goods arrive exactly as we imagined them.', who: 'Offroad GmbH' },
-          { img: 'testi-huber', q: 'We needed a complex design for a Coop advertising campaign. Oliver supported us with full trust from the very start and delivered the designs. The campaign was a success. Everything went perfectly.', who: 'Yanis Huber' }
+          { img: 'img/offroad.jpg', q: 'We searched a long time for a reliable supplier of high-quality gym apparel. With Oliver we found one. Orders run smoothly, the price is right, and the goods arrive exactly as we imagined them.', who: 'Offroad GmbH' },
+          { img: 'img/huber.jpg', q: 'We needed a complex design for a Coop advertising campaign. Oliver supported us with full trust from the very start and delivered the designs. The campaign was a success. Everything went perfectly.', who: 'Yanis Huber' }
         ]
       },
       hero: {
